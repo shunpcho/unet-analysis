@@ -4,11 +4,7 @@ version = "0.1.0"
 description = "A framework for analysis of UNet-based models."
 readme = "README.md"
 requires-python = ">=3.13"
-dependencies = [
-    "mlflow>=3.12.0",
-    "torch>=2.12.0",
-    "torchvision>=0.27.0",
-]
+dependencies = ["mlflow>=3.12.0", "torch>=2.12.0", "torchvision>=0.27.0"]
 
 [dependency-groups]
 dev = ["ipython>=9.5.0", "pyright>=1.1.408", "ruff>=0.13.1"]
@@ -25,6 +21,9 @@ build-backend = "uv_build"
 
 [tool.uv.build-backend]
 module-name = "unet_analysis"
+
+[project.scripts]
+train = "unet_analysis.train:main"
 
 [tool.ruff]
 line-length = 120
